@@ -33,4 +33,13 @@ export class DienThoaiComponent implements OnInit {
             console.log(err);
         });
     }
+
+    searchDienThoaiByText(text) {
+        this.DienThoaiService.searchDienThoaiByText(text).then((res) => {
+            this.dienthoai = res;
+            console.log(this.dienthoai);
+        }, (err) => {
+            console.log(err);
+        });
+    }
 }

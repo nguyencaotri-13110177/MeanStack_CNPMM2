@@ -45,6 +45,18 @@ export class DienThoaiService{
         });
     }
 
+    searchDienThoaiByText(text){
+        return new Promise((resolve,reject)=>{
+            this.http.get('/dienthoai/search/'+text)
+            .map(res=>res.json())
+            .subscribe(res=>{
+                resolve(res)
+            },(err)=>{
+                reject(err);
+            })
+        });
+    }
+
     
 
 

@@ -1,11 +1,12 @@
 <div class="container">
   <h1>Danh sách điện thoại
     <a [routerLink]="['/dienthoai-create']" class="btn btn-primary">Thêm Điện Thoại</a>
-    <br>
-    <!-- <a [routerLink]="['/dienthoai-create']" class="btn btn-default btn-lg">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
-        </a> -->
   </h1>
+  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="Tìm điện thoại" placeholder="Tìm kiếm điện thoại" aria-label="Search" #text>
+      <button class="btn btn-primary" (click)="searchDienThoaiByText(text.value)">Tìm kiếm</button>
+  </form>
+  <br>
 
   <div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-secondary" (click)="getDienThoaiList()">Tất cả</button>
@@ -24,7 +25,7 @@
         <th>Tên Sản Phẩm</th>
         <th>Hãng</th>
         <th>Giá</th>
-        <th>Hình</th>
+        <th>thiết kế</th>
         <th>Chi tiết</th>
       </tr>
     </thead>
@@ -33,7 +34,7 @@
         <td>{{ dienthoai.ten }}</td>
         <td>{{ dienthoai.hang }}</td>
         <td>{{ dienthoai.gia }}</td>
-        <td>{{ dienthoai.hinh }}</td>
+        <td>{{ dienthoai.thietke }}</td>
         <td>
           <a [routerLink]="['/dienthoai-detail', dienthoai._id]">Chi tiết sản phẩm</a>
         </td>

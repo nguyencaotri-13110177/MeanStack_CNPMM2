@@ -51,4 +51,12 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+/* Tim dien thoai theo text (text-search) */
+router.get('/search/:text', function(req, res, next) {
+  DienThoai.find({ $text: { $search: req.params.text } },function (err, products) {
+    if (err) return next(err);
+    res.json(products);
+  });
+});
+
 module.exports = router;
