@@ -13,10 +13,14 @@ export class DienThoaiCreateComponent{
     
       constructor(private dienthoaiService: DienThoaiService, private router: Router) { }
     
+      // gọi hàm Lấy tất cả hãng điện thoai khi khởi tạo
       ngOnInit() {
         this.getAllHangDienThoai();
       }
     
+      // Hàm tạo mới điện thoại
+      // Khi tạo mới thanh công service trả về ID của sản phẩm mới tạo
+      // tiếp tục điều hướng component dienthoai-detail với id đó
       saveDienThoai() {
         this.dienthoaiService.saveDienThoai(this.dienthoai).then((result) => {
           let id = result['_id'];
@@ -27,6 +31,8 @@ export class DienThoaiCreateComponent{
         });
       }
 
+      //Lấy danh sách tất cả hãng điện thoại
+      // Kết quả gán cho hangdienthoai:any
       getAllHangDienThoai() {
         this.dienthoaiService.getAllHangDienThoai().then((res) => {
             this.hangdienthoai = res;
