@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Danh sách điện thoại
+    <a [routerLink]="['/dienthoai-create']" class="btn btn-primary">Thêm Điện Thoại</a>
+    <br>
+    <!-- <a [routerLink]="['/dienthoai-create']" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+        </a> -->
+  </h1>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" (click)="getDienThoaiList()">Tất cả</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('samsung')">Samsung</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('sony')">Sony</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('lg')">LG</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('apple')">Apple</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('htc')">HTC</button>
+    <button type="button" class="btn btn-secondary" (click)="getListDienThoaiByCarrier('xiaomi')">Xiaomi</button>
+  </div>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tên Sản Phẩm</th>
+        <th>Hãng</th>
+        <th>Giá</th>
+        <th>Hình</th>
+        <th>Chi tiết</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dienthoai of dienthoai">
+        <td>{{ dienthoai.ten }}</td>
+        <td>{{ dienthoai.hang }}</td>
+        <td>{{ dienthoai.gia }}</td>
+        <td>{{ dienthoai.hinh }}</td>
+        <td>
+          <a [routerLink]="['/dienthoai-detail', dienthoai._id]">Chi tiết sản phẩm</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

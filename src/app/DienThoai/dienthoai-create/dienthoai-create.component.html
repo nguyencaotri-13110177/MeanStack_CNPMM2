@@ -1,0 +1,96 @@
+<div class="container">
+  <h1>Thêm điện thoại</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveDienThoai()" #dienthoaiForm="ngForm">
+        <div class="container">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th scope="row">Tên</th>
+                <td>
+                  <input type="text" class="form-control" name="ten" [(ngModel)]="dienthoai.ten" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Hãng</th>
+                <td>
+                  <div class="form-group">
+                      <select class="form-control" id="exampleFormControlSelect1" name="hang" [(ngModel)]="dienthoai.hang" required>
+                        <option *ngFor="let hangdienthoai of hangdienthoai">{{ hangdienthoai.ten }}</option>
+                      </select>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Giá</th>
+                <td>
+                  <input type="text" class="form-control" name="gia" [(ngModel)]="dienthoai.gia" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Ram</th>
+                <td>
+                  <input type="text" class="form-control" name="ram" [(ngModel)]="dienthoai.ram" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Bộ nhớ trong</th>
+                <td>
+                  <input type="text" class="form-control" name="bonhotrong" [(ngModel)]="dienthoai.bonhotrong" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Thẻ nhớ</th>
+                <td>
+                  <input type="text" class="form-control" name="thenho" [(ngModel)]="dienthoai.thenho" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Wifi</th>
+                <td>
+                  <input type="text" class="form-control" name="wifi" [(ngModel)]="dienthoai.wifi" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Băng tần mạng</th>
+                <td>
+                  <input type="text" class="form-control" name="bangtan" [(ngModel)]="dienthoai.bangtan" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Thiết kế</th>
+                <td>
+                  <input type="text" class="form-control" name="thietke" [(ngModel)]="dienthoai.thietke" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Camera trước</th>
+                <td>
+                  <input type="text" class="form-control" name="cameratruoc" [(ngModel)]="dienthoai.cameratruoc" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Camera sau</th>
+                <td>
+                  <input type="text" class="form-control" name="camerasau" [(ngModel)]="dienthoai.camerasau" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Hình</th>
+                <td>
+                  <input type="text" class="form-control" name="hinh" [(ngModel)]="dienthoai.hinh" required>
+                </td>
+              </tr>
+
+            </tbody>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success" [disabled]="!dienthoaiForm.form.valid">Save</button>
+              <a [routerLink]="['/dienthoai']" class="btn btn-primary">Trở Về</a>
+            </div>
+          </table>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

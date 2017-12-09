@@ -1,0 +1,63 @@
+<br>
+<div class="container">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th scope="row">Tên</th>
+                <td>{{ dienthoai.ten }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Hãng</th>
+                <td>{{ dienthoai.hang }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Giá</th>
+                <td>{{ dienthoai.gia }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Ram</th>
+                <td>{{ dienthoai.ram }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Bộ nhớ trong</th>
+                <td>{{ dienthoai.bonhotrong }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Thẻ nhớ</th>
+                <td>{{ dienthoai.thenho }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Wifi</th>
+                <td>{{ dienthoai.wifi }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Băng tần mạng</th>
+                <td>{{ dienthoai.bangtan }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Thiết kế</th>
+                <td>{{ dienthoai.thietke }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Camera trước</th>
+                <td>{{ dienthoai.cameratruoc }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Camera sau</th>
+                <td>{{ dienthoai.camerasau }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Hình</th>
+                <td>{{ dienthoai.hinh }}</td>
+            </tr>
+
+        </tbody>
+        <div class="row">
+            <div class="col-md-12">
+                <a [routerLink]="['/dienthoai-edit', dienthoai._id]" class="btn btn-success">Sửa</a>
+                <button class="btn btn-danger" type="button" (click)="deleteDienThoai(dienthoai._id)">Xóa</button>
+                <a [routerLink]="['/dienthoai']" class="btn btn-primary">Trở Về Trang Quản Lý</a>
+            </div>
+        </div>
+    </table>
+</div>
